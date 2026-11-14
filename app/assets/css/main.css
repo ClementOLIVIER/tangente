@@ -1,0 +1,48 @@
+@import 'tailwindcss';
+@import '@fontsource-variable/nunito';
+
+@theme {
+  --font-sans: 'Nunito Variable', 'Nunito', system-ui, sans-serif;
+  --color-arena: #000000;
+  --color-panel: #1b1b1d;
+  --color-panel-2: #26262a;
+  --color-line: #3a3a40;
+  --color-muted: #9a9aa3;
+  --color-accent: #006dbb;
+}
+
+html,
+body {
+  background: #000;
+  color: #f2f2f2;
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  overscroll-behavior: none;
+  height: 100%;
+}
+
+#__nuxt {
+  height: 100%;
+}
+
+/* Surface de contrôle : aucun geste parasite (zoom, défilement, sélection, menu). */
+.no-gesture {
+  touch-action: none;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.btn {
+  @apply inline-flex items-center justify-center gap-2 rounded-lg px-4 py-2 font-bold transition-colors disabled:cursor-not-allowed disabled:opacity-40;
+}
+.btn-primary {
+  @apply bg-[var(--color-accent)] text-white hover:brightness-110;
+}
+.btn-ghost {
+  @apply bg-[var(--color-panel-2)] text-white hover:bg-[#33333a];
+}
+.field {
+  @apply rounded-md border border-[var(--color-line)] bg-black px-2 py-1 text-white outline-none focus:border-[var(--color-accent)];
+}
